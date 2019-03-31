@@ -6,16 +6,16 @@
 \author{Denise Pumain, Juste Raimbault, Arnaud Banos}
 % Use \authorrunning{Short Title} for an abbreviated version of
 % your contribution title if the original one is too long
-\institute{Juste Raimbault \at UPS CNRS 3611 ISC-PIF and CASA, UCL and UMR CNRS 8504 G{\'e}ographie-cit{\'e}s\\\medskip
-Corresponding author: \texttt{juste.raimbault@polytechnique.edu}\\\medskip
-Denise Pumain \at UMR CNRS 8504 G{\'e}ographie-cit{\'e}s\\\medskip
-Arnaud Banos \at UMR CNRS IDEES
+\institute{Juste Raimbault \at UPS CNRS 3611 ISC-PIF, CASA UCL and UMR CNRS 8504 G{\'e}ographie-cit{\'e}s\\
+Corresponding author: \texttt{juste.raimbault@polytechnique.edu}\\
+Denise Pumain \at UMR CNRS 8504 G{\'e}ographie-cit{\'e}s\\
+Arnaud Banos \at UMR CNRS 6266 IDEES
 }
 
 \maketitle
 
 
-\abstract{Urban systems intrinsically need multiple complementary theories to be understood. This concluding chapter synthesizes the approaches developed in the book and aims at showing their complementarity and how new approaches making bridges can be developed. We first provide a broad overview of the theories and disciplines that the viewpoints developed in the book link to. We then extend this synthesis through citation network analysis, reconstructing a citation network from the references cited by authors, and identify disciplines from community detection within this network what allows to discuss the relative positioning of approaches. We finally discuss how modeling and simulation could be a systematic entry to the coupling of theories, and recall best practices in this particular context of building integrative complex simulation models of social systems.
+\abstract{Urban systems intrinsically need multiple complementary theories to be understood. This concluding chapter synthesizes the approaches developed in the book and aims at showing their complementary nature and how new approaches making bridges can be developed. We first provide a broad overview of the theories and disciplines that the viewpoints developed in the book link to. We then extend this synthesis through citation network analysis, reconstructing a citation network from the references cited by authors, and identify disciplines from community detection within this network what allows to discuss the relative positioning of approaches. We finally discuss how modeling and simulation could be a systematic entry to the coupling of theories, and recall best practices in this particular context of building integrative complex simulation models of social systems.
 \medskip\\
 \textbf{Keywords : }\textit{Urban theories; Urban models; Simulation model coupling}
 }
@@ -39,11 +39,27 @@ Arnaud Banos \at UMR CNRS IDEES
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Citation network analysis}
 
-We now turn to a quantitative analysis of the relative positioning of disciplines and approaches discussed above. We propose to use citation network analysis as a proxy to understand the structure of that scientific environment, what captures a single dimension of practices but contains relevant information on endogenous disciplinary structures. We use the method of \cite{Raimbault2019} to construct a citation network at depth two, from the references cited by chapters of this book.
-
-The bibliography of each chapter was manually indexed to ensure correct citing references retrieval during the data collection process. Furthermore, for performance purposes, but also to ensure a focus of the network content on urban issues, references clearly out of the scope and which would yield a significant part of the final network totally unrelated to urban theories (the paper on morphogenesis \cite{turing1990chemical} is a typical example, being anectdotically cited by papers relating to urban issues, but also massively cited by several branches of biology). The corpus used is available as raw data, along with the code and results, on the open git repository of the project at \url{}.
+We now turn to a quantitative analysis of the relative positioning of disciplines and approaches discussed above. We propose to use citation network analysis as a proxy to understand the structure of that scientific environment, what captures a single dimension of practices but contains relevant information on endogenous disciplinary structures. We use the method and tools of \cite{Raimbault2019} to construct a citation network at depth two, from the references cited by chapters of this book. The rationale is to reconstruct from the bottom-up the scientific legacy in which each approach situates itself (a citation is a subjective and positioned asset to provide a basis for further knowledge), what is indeed not fully overlapping with the actual content (e.g. captured by semantics, as \cite{banos2018spatialised} shows how the two quantification are complementary).
 
 
+The bibliography of each chapter was manually indexed to ensure correct citing references retrieval during the data collection process. Furthermore, for performance purposes, but also to ensure a focus of the network content on urban issues, references clearly out of the scope and which would yield a significant part of the final network totally unrelated to urban theories (the paper on morphogenesis \cite{turing1990chemical} is a typical example, being anectdotically cited by papers relating to urban issues, but also massively cited by several branches of biology). The corpus used is available as raw data, along with the code and results, on the open git repository of the project at \url{https://github.com/JusteRaimbault/Perspectivism/tree/master/Models/QuantEpistemo}.
+
+
+The initial corpus contains $N=$ references, and from it the citation network at depth two is reconstructed, yielding a network with $V=$ nodes and $E=$ links.
+% possibly additional filtering ?
+%  -> out-of-scope papers hand-removed in bib screening
+%  -> if too much junk in the final network, add e.g. semantic filtering ? (title only : maybe too restrictive)
+A community detection algorithm (Louvain method) on the symmetrized network is used to reconstruct endogenous disciplines from the viewpoint of citation practices.
+
+% - modularity ; distribution of community sizes etc.
+% - list of main communities (named by expert knowledge)
+% - visualization
+% - discussion of relative positioning of the different disciplines.
+% - quantification of links ?
+% - positioning of chapters (what proportion of roots in each community) -> measures of interdisciplinarity ? (Rao-Stirling ?)
+% overlap between chapters' networks (or proximity between chapters ?)
+
+% opening (-> discussion ?) : are there missing significant approaches ?
 
 
 
@@ -55,7 +71,7 @@ The bibliography of each chapter was manually indexed to ensure correct citing r
 \comment[JR]{suggestions :
 \begin{itemize}
 	\item specificité des commandements dans le cas de la geographie ?
-	\item proposition à amender / discuter selon cotre positionnement : le couplage des modeles (de simulation) et donc la construction de modeles intégrés est une façon robuste de coupler les théories - d'où l'intérêt des commandements dans le contexte de ponts entre les differentes theories urbaines ? (l'intérêt du couplage en lui meme est déjà présent ici)
+	\item proposition à amender / discuter selon le positionnement : le couplage des modeles (de simulation) et donc la construction de modeles intégrés est une façon robuste de coupler les théories - d'où l'intérêt des commandements dans le contexte de ponts entre les differentes theories urbaines ? (l'intérêt du couplage en lui meme est déjà présent ici)
 \end{itemize}
 }
 
@@ -66,6 +82,11 @@ The bibliography of each chapter was manually indexed to ensure correct citing r
 %%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
 
+% vers des approches intégrées ? / sciences sociales evidence-based / couplage d'approches (de perspectives) comme un moyen de s'en rapprocher
+% role de differentes disciplines emergentes : city science and urban analytics de Batty ; nouvelle generation de TQG ; role des physiciens ?
+% distance à l'applicable (très variable selon les disciplines d'origine) : comment assurer un transfert vers de la prise de decision et planification ?
+
+% Q : doit on parler de perspectives en termes de contenu : par exemple modeles/policies multi-scale. ou seulement en termes epistemologiques.
 
 
 
