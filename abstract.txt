@@ -1,0 +1,8 @@
+
+In this concluding chapter, we propose two ways to synthesize the scientific contributions of this book.
+The first discuss several major principles that can be retained for constructing relevant theories for urban science in relation with the contents of the chapters of the book.
+The second part identifies communities of scientific discussion by analyzing a citation network capturing the scientific neighborhood of this book, constructed starting from the works quoted in the bibliographies of the chapters and enlarging to the papers citing them.
+This mining of digital bibliographical data confirms the wide inter-disciplinarity of urban questions justifying the plurality of urban theories and opening a variety of solutions for complementing them and coupling their generic models.
+We finally suggest directions for the construction of integrated theories, in particular through the coupling of simulation models corresponding to the different approaches to be bridged.
+
+
